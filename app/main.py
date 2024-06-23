@@ -1,8 +1,11 @@
+""" Streamlit app for running a ping command to a destination address. """
+
 import streamlit as st
 from ping_utils import run_ping
 
 
 def main():
+    """Main function of the App."""
     st.title("Destination Address Ping with Console Output")
 
     destination_address = st.text_input("Enter your destination address:")

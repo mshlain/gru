@@ -1,6 +1,7 @@
+""" This module contains utility functions for the ping app """
+
 import subprocess
 import platform
-import threading
 
 
 def run_ping(host, output_area):

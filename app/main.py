@@ -10,16 +10,16 @@ def main():
     
     if st.button('Run Ping'):
         if destination_address:
-            st.write(f"Pinging {destination_address}...")
-            output_area = console_output.text_area("Console Output", value="", height=400)
+            status = st.warning(f"Pinging {destination_address}...")
+            console_output.text_area("Console Output", value="", height=400)
             success = run_ping(destination_address, console_output)
             
             if success:
-                st.success(f"Successfully pinged {destination_address}")
+                status.success(f"Successfully pinged {destination_address}")
             else:
-                st.error(f"Failed to ping {destination_address}")
+                status.error(f"Failed to ping {destination_address}")
         else:
-            st.warning("Please enter a destination address before running the ping.")
+            status.warning("Please enter a destination address before running the ping.")
 
 if __name__ == "__main__":
     main()
